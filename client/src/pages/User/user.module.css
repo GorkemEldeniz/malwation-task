@@ -1,0 +1,128 @@
+.update {
+  flex: 1;
+  padding: 2rem 1rem;
+  text-align: left;
+}
+
+.update>a {
+  display: block;
+  color: hsl(218deg 13.39% 56.08%);
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0.1ch;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.update>header {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.update>form {
+  display: grid;
+  width: 80%;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+form input,
+select {
+  border: 1px solid rgb(210 214 221);
+  border-radius: 0.4rem;
+  padding: .5rem .7rem;
+  outline: none;
+}
+
+form label {
+  color: var(--light-blue);
+}
+
+
+.update>form>div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.update>form>div:nth-child(5) {
+  flex-direction: unset;
+  grid-column: span 2;
+  align-items: center;
+}
+
+.update>form>button {
+  padding: 0.5rem 1rem;
+  grid-column: span 2;
+  justify-self: end;
+  width: fit-content;
+}
+
+.error {
+  color: red;
+}
+
+/* Custom checkbox */
+.switch {
+  display: inline-block;
+  height: 2rem;
+  position: relative;
+  width: 3.5rem;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 1.5rem;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 1.5rem;
+}
+
+input:checked+.slider {
+  background-color: #66bb6a;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media (max-width:650px) {
+  .update>form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form>* {
+    width: 100%;
+  }
+
+}
