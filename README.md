@@ -30,11 +30,11 @@
         ```bash
           cd server
         ``` 
-      * Server bağımlılıklarını indirme pnpm kullanıyorsanız
+      * Server bağımlılıklarını indirmede pnpm kullanıyorsanız
         ```bash
           pnpm install           
           ```
-      * Server bağımlılıklarını indirme npm kullanıyorsanız               
+      * Server bağımlılıklarını indirmede npm kullanıyorsanız               
         ```bash
           npm install           
         ```
@@ -52,11 +52,11 @@
         ```bash
           cd client
         ``` 
-      * Client bağımlılıklarını indirme pnpm kullanıyorsanız
+      * Client bağımlılıklarını indirmede pnpm kullanıyorsanız
         ```bash
           pnpm install           
         ```
-      * Client bağımlılıklarını indirme npm kullanıyorsanız               
+      * Client bağımlılıklarını indirmede npm kullanıyorsanız               
         ```bash
           npm install           
         ```                          
