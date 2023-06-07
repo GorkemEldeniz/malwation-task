@@ -19,6 +19,19 @@
       * eslint,prettier (as Developer dependencies)
       * css module
 
+## Proje Görselleri
+  1. Login Page
+    ![Login Page](images/login.png)
+---    
+  2. Register Page
+    ![Register Page](images/register.png)  
+---
+  3. Users Table
+    ![Users](images/table.png)
+---
+  4. Update User Page
+    ![Update User](images/update.png)     
+---    
 ## Proje Kurulumu
 
   1. Projeyi Klonlama
