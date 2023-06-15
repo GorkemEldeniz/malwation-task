@@ -1,7 +1,7 @@
 import Button from "../../components/Button"
 import { Link } from 'react-router-dom';
 import * as yup from 'yup';
-import { useFormik, Formik, ErrorMessage, Field } from 'formik';
+import { Formik, ErrorMessage, Field } from 'formik';
 //import * as utils from '../../utils/index'
 import styles from '../../Layouts/LoginRegisterLayout/loginregister.module.css';
 import { useAppDispatch } from "../../store/hook";
@@ -15,21 +15,6 @@ const validationSchema = yup.object().shape({
 function Login() {
 
   const dispatch = useAppDispatch();
-  //const { serverError } = useAppSelector(state => state.user);
-
-  // const formik = useFormik({
-  //   initialValues: {
-  //     email: '',
-  //     password: '',
-  //   }, validationSchema,
-  //   onSubmit: async (values, helpers) => {
-  //     const res = await dispatch(loginUser(values));
-  //     if (res.payload.error) {
-  //       helpers.setFieldError(res.payload.path, res.payload.msg);
-  //     }
-  //   },
-  // });
-
   return (
     <Formik
       validationSchema={validationSchema}
@@ -43,7 +28,7 @@ function Login() {
         }
       }}
     >
-      {({ isSubmitting, isValid, dirty, handleSubmit }) => (
+      {({ isSubmitting, isValid, handleSubmit }) => (
         <form onSubmit={handleSubmit}>
           {isSubmitting && 'Giriş Yapılıyor...'}
           <label htmlFor="email">Email</label>
@@ -58,41 +43,6 @@ function Login() {
       )}
     </Formik>
   )
-
-
-  // return (
-  //   <form onSubmit={formik.handleSubmit}>
-  //     {formik.isSubmitting && 'Giriş Yapılıyor...'}
-  //     <label htmlFor="email">Email</label>
-  //     <input
-  //       placeholder="Enter your mail"
-  //       type="email"
-  //       id="email"
-  //       name="email"
-  //       onBlur={formik.handleBlur}
-  //       onChange={formik.handleChange}
-  //       value={formik.values.email}
-  //     />
-  //     {formik.touched.email && formik.errors.email && <div className={styles.error}>{formik.errors.email}</div>}
-  //     <label htmlFor="password">Password</label>
-  //     <input
-  //       placeholder="Enter your password"
-  //       type="password"
-  //       id="password"
-  //       name="password"
-  //       onBlur={formik.handleBlur}
-  //       onChange={formik.handleChange}
-  //       value={formik.values.password}
-  //     />
-  //     {formik.touched.password && formik.errors.password && <div className={styles.error}>{formik.errors.password}</div>}
-  //     {JSON.stringify({
-  //       valid: formik.isValid,
-  //       dirty: formik.dirty
-  //     })}
-  //     <Button disabled={formik.isValid || formik.dirty} type="submit" color="var(--default-blue)">Log In</Button>
-  //     <span>Don't have an account? <Link to='register'>Sign Up</Link></span>
-  //   </form>
-  // )
 }
 
 export default Login
