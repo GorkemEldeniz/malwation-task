@@ -36,19 +36,19 @@ function Register() {
       }}
     >
       {({ handleSubmit, isValid, isSubmitting }) => (
-        <form action="" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} action='/' method='post'>
           {isSubmitting && 'Kayıt olunuyor...'}
           <label htmlFor="name">Name</label>
           <Field id='name' name='name' component='input' placeholder="Enter your name" type="text" />
           <ErrorMessage name="name" component='small' className={styles.error} />
           <label htmlFor="email">Email</label>
-          <Field id='email' name='email' component='input' placeholder="Enter your name" type="email" />
+          <Field id='email' name='email' component='input' placeholder="Enter your email" type="email" />
           <ErrorMessage name="email" component='small' className={styles.error} />
           <label htmlFor="phone">Phone Number</label>
-          <Field id='phone' name='phone' component='input' placeholder="Enter your name" type="tel" />
+          <Field id='phone' name='phone' component='input' placeholder="Enter your phone number" type="tel" />
           <ErrorMessage name="phone" component='small' className={styles.error} />
           <label htmlFor="password">Password</label>
-          <Field id='password' name='password' component='input' placeholder="Enter your name" type="password" />
+          <Field id='password' name='password' component='input' placeholder="Enter your password" type="password" />
           <ErrorMessage name="password" component='small' className={styles.error} />
           <Button disabled={!isValid} type="submit" color='var(--default-blue)'>Sign In</Button>
           <span>Do you have an account? <Link to='/'>Log In</Link></span>

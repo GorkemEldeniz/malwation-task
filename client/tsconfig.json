@@ -19,6 +19,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": [".eslintrc.cjs","src/**/*.tsx","src/types/index.d.ts","src/store/*.ts","src/store/features/*.ts"],
+  "include": [".eslintrc.cjs","src/**/*.tsx","./src/types/index.d.ts",],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
