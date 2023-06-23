@@ -18,6 +18,7 @@ aside {
 .toggle {
   padding: 1rem;
   cursor: pointer;
+  height: fit-content;
 }
 
 aside>img {

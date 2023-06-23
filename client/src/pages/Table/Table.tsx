@@ -6,11 +6,6 @@ import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import Loader from '../../components/Loader';
 import { UserState } from '../../store/features/userSlice';
 
-const paginationCounter = new Array(11).fill('').map((_, i) => {
-  if (i == 0) return '<';
-  if (i == 10) return '>';
-  return i;
-})
 
 function Table() {
 
@@ -23,7 +18,11 @@ function Table() {
   const [searchList, setSearchList] = useState<UserState[]>([]);
   const [search, setSearch] = useState<string>('');
 
-
+  const paginationCounter = new Array(users.length / 10 > 0 ? Math.floor(users.length / 10) + 2 : 1).fill('').map((_, i) => {
+    if (i == 0) return '<';
+    if (i == users.length) return '>';
+    return i;
+  })
 
   useEffect(() => {
     localStorage.setItem('users', JSON.stringify(users));
