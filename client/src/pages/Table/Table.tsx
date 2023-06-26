@@ -5,14 +5,27 @@ import { useEffect, useMemo, useState } from 'react';
 import { getUserById, deleteUserById, getUsers } from '../../store/features/userSlice';
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import Loader from '../../components/Loader';
-import { UserState } from '../../store/features/userSlice';
+import { useLoaderData } from 'react-router-dom';
+import type { UserState } from '../../store/features/userSlice';
+
+
+export const fetchUsers = async (): Promise<UserState[] | any> => {
+  let users = await fetch('http://localhost:3000/all', {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  users = await users.json()
+  return users
+}
 
 
 function Table() {
 
   const [searchParams] = useSearchParams();
   const dispatch = useAppDispatch();
-  const { users, user } = useAppSelector(state => state.user);
+  const users: UserState[] = useLoaderData() as UserState[];
+  const { user } = useAppSelector(state => state.user);
   const pageNumber = Number(searchParams.get('page')) || 1;
   const navigator = useNavigate();
   const [loader, setLoader] = useState(false);
