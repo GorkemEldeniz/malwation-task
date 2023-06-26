@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import styles from './table.module.css';
 import { useAppDispatch, useAppSelector } from '../../store/hook';
 import { useEffect, useMemo, useState } from 'react';
