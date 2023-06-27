@@ -1,7 +1,7 @@
 import Button from "../../components/Button"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
-import { Formik, Field, ErrorMessage } from 'formik';
+import { Formik, Field, ErrorMessage, replace } from 'formik';
 import * as utils from '../../utils/index'
 import styles from '../../Layouts/LoginRegisterLayout/loginregister.module.css';
 import { useAppDispatch } from "../../store/hook";
@@ -17,6 +17,7 @@ const validationSchema = yup.object().shape({
 
 function Register() {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   return (
     <Formik
@@ -30,9 +31,9 @@ function Register() {
       onSubmit={async (values, helpers) => {
         const res = await dispatch(createUser({ ...values, phone: Number(values.phone) }));
         if (res.payload.error) {
-          console.log(res.payload);
           helpers.setFieldError(res.payload.path, res.payload.msg);
         }
+        else navigate('/', { replace: true });
       }}
     >
       {({ handleSubmit, isValid, isSubmitting }) => (

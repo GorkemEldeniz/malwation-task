@@ -69,7 +69,6 @@ function User() {
       }}
       validationSchema={validationSchema}
       onSubmit={async (values) => {
-
         submit(values, {
           method: 'POST'
         })

@@ -62,10 +62,9 @@ function AsideBar() {
   }
 
 
-  const handleUsers = async (e: React.MouseEvent, name: string) => {
+  const handleUsers = (e: React.MouseEvent, name: string) => {
     if (name === 'Users') {
       e.preventDefault();
-      await dispatch(getUsers())
       navigator('/users?page=1');
     }
   }
